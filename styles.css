@@ -1,0 +1,503 @@
+:root {
+    --background-color: #FAFAFA;
+    --primary-color: #351b76;
+    --secondary-color: #F4A300;
+    --paragraph-color: #635a7c;
+    --tab-bg-color: #edf2f7;
+}
+
+*, *::before, *::after { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+html, body {
+    overflow-x: hidden;
+}
+.container {
+    width: 1200px;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+body {
+    overflow-x: hidden;
+}
+
+/* Nav Menu Section */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.logo-and-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-and-title img {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+}
+.logo-and-title h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.toggle-button {
+    border: none;
+    background: none;
+}
+.burger-icon {
+    font-size: 2rem;
+}
+  
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+}
+.nav-links.show {
+    max-height: 500px;
+    opacity: 1;
+}
+.nav-links li {
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-color);
+}
+.nav-links .no-underline {
+    border: none;
+}
+.nav-links a {
+    display: block;
+    padding: 0.8rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--secondary-color);
+    background-color: #ffffff;
+}
+
+.desktop-nav {
+    display: none;
+}
+.desktop-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+.hero h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+.hero span {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border-radius: 2px;
+    font-style: italic;
+}
+.hero p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--paragraph-color);
+}
+.hero-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.hero button {
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.hero .btn-view-menu {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    margin-top: 1rem;
+}
+.hero .btn-view-menu a {
+    color: var(--background-color);
+}
+.btn-view-menu:hover {
+    background-color: #4f2da3;
+    transition: all 0.2s ease;
+}
+.hero .btn-call-us {
+    background-color: var(--background-color);
+    border: 2px solid var(--secondary-color);
+}
+.hero .btn-call-us a {
+    color: var(--primary-color);
+}
+.btn-call-us:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.1s ease;
+}
+.hero-image {
+    margin-top: 3rem;
+    border-radius: 2rem;
+}
+
+/* Established Section */
+.established {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 8rem;
+}
+.established img {
+    border-radius: 2rem;
+}
+.established div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.established .first-paragraph {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    text-align: left;
+}
+.established h3 {
+    color: var(--primary-color);
+    font-size: 1.7rem;
+    text-align: left;
+}
+.established span {
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    font-style: italic;
+}
+.established .second-paragraph {
+    color: var(--paragraph-color);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+/* Burger Menu Section */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 8rem;
+}
+.burger-menu h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+.burger-menu span {
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    font-style: italic;
+}
+.burger-menu p {
+    color: var(--paragraph-color);
+    text-align: center;
+}
+
+    /* menu-categories */
+.menu-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--tab-bg-color);
+    margin: 3rem 0;
+    padding: 2rem 0;
+}
+
+.tab-btn {
+    color: var(--paragraph-color);
+    border: none;
+    font-size: 1rem;
+    background: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.tab-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+    /* Only the active tab-content (menu-container) is shown */
+.tab-content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 4rem 0;
+}
+.tab-content.active {
+    display: flex;
+}
+
+.food-listings {
+    background-color: var(--tab-bg-color);
+    padding: 1rem 1rem 3rem 1rem;
+    border-radius: 10px;
+    width: 90%;
+}
+.food-listings h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+.food-listings p {
+    font-size: 0.8rem;
+    color: var(--paragraph-color);
+    text-align: left;
+}
+
+/* Extras Section */
+.extras {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+.extras img {
+    border-radius: 25px;
+}
+.beyond-burgers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.beyond-burgers .paragraph-one {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+.beyond-burgers p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--paragraph-color);
+}
+.beyond-burgers h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+.beyond-burgers span {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    font-style: italic;
+}
+
+/* Event Section */
+.event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--primary-color);
+    padding: 6rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+}
+.event h3, .event p {
+    text-align: center;
+    color: var(--background-color);
+    max-width: 70%;
+}
+.event h3 {
+    font-size: 1.8rem;
+}
+.event button {
+    border: none;
+    font-size: 1rem;
+    padding: 0.8rem 3rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.event a {
+    color: #000000;
+}
+
+/* Footer Section */
+footer {
+    margin: 7rem 1rem 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.copyright {
+    margin-top: 3rem;
+}
+footer p {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* tablet breakpoint */
+@media all and (min-width: 640px) {
+    .hero-button-container {
+        padding: 2rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero .btn-view-menu {
+        margin-top: 0;
+    }
+    .hero button {
+        width: 50%;
+    }
+
+    .established, .extras {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .container {
+        padding: 0rem 2rem 1rem 2rem;
+    }
+    .hero {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero-button-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .established, .extras {
+        max-width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        flex-direction: row;
+        align-items: center;
+    }
+    .established img, .extras img {
+        width: 50%;
+        height: 50%;
+    }
+    .established div, .extras div {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .established h3, .extras h3 {
+        font-size: 2.1rem;
+    }
+    .established div {
+        gap: 0rem;
+    }
+    .extras {
+        flex-direction: row-reverse;
+    }
+
+    .burger-menu h3 {
+        font-size: 3rem;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .toggle-button {
+        display: none;
+    }
+    .show {
+        display: none;
+    }
+    .desktop-nav {
+        display: block;
+        display: flex;
+        gap: 3rem;
+        font-size: 1rem;
+    }
+
+    .hero-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hero-image {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .hero h1, .hero p {
+        text-align: left;
+    }
+    .hero-button-container {
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+
+    .established h3, .extras h3 {
+        font-size: 2.8rem;
+    }
+    .established .second-paragraph, .extras .second-paragraph {
+        font-size: 1.1rem;
+    }
+
+    .food-listings {
+        width: 80%;
+    }
+
+    .event h3 {
+        font-size: 2.2rem;
+    }
+    .event p {
+        font-size: 1.1rem;
+    }
+}
